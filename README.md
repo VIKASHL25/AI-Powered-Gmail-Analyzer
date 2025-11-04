@@ -2,7 +2,7 @@
 
 A modern Django web application designed for secure user authentication via Google OAuth 2.0 and subsequent retrieval of the user's latest Gmail messages using the Gmail API. This project delivers a clean, professional user interface for both the login process and the inbox display.
 
-## 🚀 Features
+##  Features
 
 -  Secure Google Authentication: Implements the OAuth 2.0 flow for secure, token-based login.
 -  Gmail Data Fetching: Fetches key email details (subject, sender, snippet) using the Gmail API.
@@ -45,7 +45,7 @@ googleauth/
 1. Clone & navigate
 
 ```powershell
-git clone https://github.com/<your-username>/gmail-auth-django.git
+git clone https://github.com/VIKASHL25/Google-Authentication-and-Fetching-Mails.git
 cd gmail-auth-django
 ```
 
@@ -111,10 +111,9 @@ google-api-python-client
 
 ## Screenshots
 
-Place app screenshots in a `/docs` or `/assets` directory and reference them here. Example placeholders:
 
-![Login Page](./docs/login-screenshot.png)
-![Inbox Display](./docs/inbox-screenshot.png)
+![Login Page](./imgs/login.png)
+![Inbox Display](./imgs/mails.png)
 
 ## Author
 

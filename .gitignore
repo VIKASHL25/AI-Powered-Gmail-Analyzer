@@ -16,7 +16,7 @@ venv/
 *.mo
 
 # Secrets
-credentials.json
+cred.json
 token.json
 client_secret*.json
 

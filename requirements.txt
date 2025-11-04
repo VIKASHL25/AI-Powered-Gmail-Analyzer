@@ -1,0 +1,15 @@
+# Core Framework
+Django>=5.0
+
+# Google Authentication and APIs
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.105.0
+
+# HTTP Requests and Utilities
+requests>=2.31.0
+httplib2>=0.22.0
+
+# Environment Variables
+python-dotenv>=1.0.1
