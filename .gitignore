@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+.env
+venv/
+*.pot
+*.mo
+
+# Secrets
+credentials.json
+token.json
+client_secret*.json
+
+# IDE / OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Environment
+env/
+venv/
+.env.bak

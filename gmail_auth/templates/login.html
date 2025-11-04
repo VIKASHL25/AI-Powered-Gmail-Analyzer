@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login with Google</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335);
+      background-size: 300% 300%;
+      animation: gradientShift 6s infinite alternate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    @keyframes gradientShift {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 350px;
+    }
+
+    h1 {
+      color: #202124;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      color: #5f6368;
+      border: 1px solid #dadce0;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .google-btn img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .google-btn:hover {
+      box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h1>Welcome to Gmail Dashboard</h1>
+    <a href="/google/login/" class="google-btn">
+      
+      Login with Google
+    </a>
+    <footer>Made by Vikas</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Gmail Inbox</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f8fafc;
+      color: #333;
+    }
+
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .logout-btn {
+      background-color: white;
+      color: #4285f4;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #e8f0fe;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .email-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .email-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .email-subject {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #202124;
+      margin-bottom: 6px;
+    }
+
+    .email-sender {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .email-snippet {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      background-color: #f1f3f4;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .email-card {
+        padding: 15px 18px;
+      }
+
+      header h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>📧 Your Gmail Inbox</h1>
+    <button class="logout-btn" onclick="window.location.href='/'">Logout</button>
+  </header>
+
+  <div class="container">
+    {% if emails %}
+      {% for email in emails %}
+        <div class="email-card">
+          <div class="email-subject">{{ email.subject }}</div>
+          <div class="email-sender"><strong>From:</strong> {{ email.sender }}</div>
+          <div class="email-snippet">{{ email.snippet }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No emails found.</p>
+    {% endif %}
+  </div>
+
+  <footer>Designed by <b>Vikas</b> • Gmail API Dashboard</footer>
+</body>
+</html>
