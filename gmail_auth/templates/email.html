@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Gmail Inbox</title>
+  <meta charset="UTF-8">
+  <title>VHL MailSense | AI Gmail Analyzer</title>
+  <link rel="icon" href="logo.png" type="image/png">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: #f8fafc;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fb;
       color: #333;
     }
 
+    /* ===== HEADER ===== */
     header {
-      background-color: #4285f4;
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
       color: white;
-      padding: 1.5rem 2rem;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    header h1 {
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: white;
+      padding: 4px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
       margin: 0;
-      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text span {
+      font-size: 13px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .logout {
+      color: white;
+      text-decoration: none;
       font-weight: 600;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background 0.3s;
     }
 
-    .logout-btn {
-      background-color: white;
-      color: #4285f4;
-      border: none;
-      border-radius: 6px;
-      padding: 8px 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s ease;
+    .logout:hover {
+      background: rgba(255,255,255,0.4);
     }
 
-    .logout-btn:hover {
-      background-color: #e8f0fe;
-    }
-
+    /* ===== CONTAINER ===== */
     .container {
       max-width: 900px;
       margin: 30px auto;
@@ -52,71 +80,99 @@
 
     .email-card {
       background: white;
-      border-radius: 12px;
-      padding: 20px 25px;
+      border-radius: 15px;
+      padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
     }
 
     .email-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
-    .email-subject {
-      font-size: 1.2rem;
+    .subject {
+      font-size: 18px;
       font-weight: 600;
-      color: #202124;
-      margin-bottom: 6px;
+      color: #3b3b98;
     }
 
-    .email-sender {
-      font-size: 0.95rem;
-      color: #555;
+    .sender {
+      color: #777;
+      font-size: 14px;
+      margin-top: 5px;
       margin-bottom: 10px;
     }
 
-    .email-snippet {
-      font-size: 0.95rem;
-      color: #666;
+    .importance {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .importance.Important { background: #04e923; }
+    .importance.Non-Important { background: #de0e0e; }
+    .importance.Unknown { background: #888; }
+
+    .summary {
+      background: #f1f5ff;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 14px;
       line-height: 1.5;
+      margin-top: 10px;
+      max-height: 130px;
+      overflow-y: auto;
+      word-wrap: break-word;
+    }
+
+    .no-summary {
+      font-style: italic;
+      color: #aaa;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      font-size: 13px;
+      margin-top: 30px;
+      padding-bottom: 10px;
       color: #777;
-      background-color: #f1f3f4;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .email-card {
-        padding: 15px 18px;
-      }
-
-      header h1 {
-        font-size: 1.3rem;
-      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>📧 Your Gmail Inbox</h1>
-    <button class="logout-btn" onclick="window.location.href='/'">Logout</button>
-  </header>
+{% load static %}
+<header>
+  <div class="brand-title">
+    <img src="{% static 'images/logo.png' %}" alt="Smart MailSense Logo" width="50" height="50" style="border-radius: 8px; background: white; padding: 4px;">
+    <div class="brand-text">
+      <h1>VHL Smart MailSense</h1>
+      <span>An AI-Powered Smart Gmail Analyzer</span>
+    </div>
+  </div>
+  <a href="/" class="logout">Logout</a>
+</header>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
     {% if emails %}
-      {% for email in emails %}
+      {% for mail in emails %}
         <div class="email-card">
-          <div class="email-subject">{{ email.subject }}</div>
-          <div class="email-sender"><strong>From:</strong> {{ email.sender }}</div>
-          <div class="email-snippet">{{ email.snippet }}</div>
+          <div class="subject">{{ mail.subject }}</div>
+          <div class="sender">From: {{ mail.sender }}</div>
+          <span class="importance {{ mail.importance }}">
+            {{ mail.importance }}
+          </span>
+
+          {% if mail.summary %}
+            <div class="summary"> {{ mail.summary }}</div>
+          {% else %}
+            <div class="summary no-summary">No summary available</div>
+          {% endif %}
         </div>
       {% endfor %}
     {% else %}
@@ -124,6 +180,6 @@
     {% endif %}
   </div>
 
-  <footer>Designed by <b>Vikas</b> • Gmail API Dashboard</footer>
+  <footer>© 2025 <strong>VHL MailSense</strong> — Built with  by Vikas</footer>
 </body>
 </html>

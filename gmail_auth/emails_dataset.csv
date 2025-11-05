@@ -1,0 +1,233 @@
+text,label
+"Project update required by client, deadline approaching",Important
+"Payment reminder: invoice due tomorrow",Important
+"Team meeting rescheduled to 10:30 AM",Important
+"Urgent: please approve the budget for Q4",Important
+"Your account statement is available for download",Important
+"Salary credited to your bank account",Important
+"University exam timetable released",Important
+"Final year project submission deadline this week",Important
+"Important: Password reset request",Important
+"Flight booking confirmation for Bangalore trip",Important
+"Delivery delayed, we apologize for inconvenience",Important
+"Office holiday notice for Diwali",Important
+"Security alert: login from new device",Important
+"Your Amazon refund has been processed",Important
+"Invitation: Annual company conference",Important
+"New job opening at Infosys",Important
+"Your Netflix subscription renewal reminder",Important
+"Deadline extended for report submission",Important
+"Meeting notes attached from today’s discussion",Important
+"Project deliverables checklist attached",Important
+"Your order has been shipped",Important
+"Course enrollment confirmation from Coursera",Important
+"Exam results published online",Important
+"Important document shared via Google Drive",Important
+"Weekly timesheet reminder",Important
+"Meeting link for client discussion",Important
+"Software update required immediately",Important
+"Appraisal feedback form submission reminder",Important
+"Invoice for recent purchase attached",Important
+"Performance review meeting invite",Important
+"Discount offer: buy 1 get 1 free on shoes",Non-Important
+"50% off on mobile accessories this weekend",Non-Important
+"Join our newsletter for daily updates",Non-Important
+"Your pizza order is ready for pickup",Non-Important
+"New collection of T-shirts now available",Non-Important
+"Valentine’s Day offer! Get 40% off",Non-Important
+"Limited time sale: 70% off electronics",Non-Important
+"New arrivals: summer dresses on Myntra",Non-Important
+"Special weekend offer from Domino’s Pizza",Non-Important
+"Refer a friend and earn rewards",Non-Important
+"Congratulations! You’ve won a free voucher",Non-Important
+"Movie recommendations for your weekend",Non-Important
+"Exclusive: watch the new trailer now",Non-Important
+"Upcoming cricket match schedule",Non-Important
+"Top 10 travel destinations for 2025",Non-Important
+"New music album released on Spotify",Non-Important
+"Best restaurants near you this week",Non-Important
+"Daily horoscope and astrology tips",Non-Important
+"Online yoga session invitation",Non-Important
+"Sign up for free online webinar",Non-Important
+"Upgrade to premium plan at 20% off",Non-Important
+"Exclusive deal on travel insurance",Non-Important
+"Check out our latest tech gadgets",Non-Important
+"Your subscription trial ends soon",Non-Important
+"Join us for a live fitness session",Non-Important
+"Earn cashback on your next purchase",Non-Important
+"New YouTube video uploaded",Non-Important
+"Limited stock alert: buy now!",Non-Important
+"Enjoy free shipping on all orders",Non-Important
+"Explore top hotels with special discounts",Non-Important
+"Watch live: India vs Australia highlights",Non-Important
+"Your feedback is valuable to us",Non-Important
+"Invite your friends to join our platform",Non-Important
+"Top-rated budget smartphones this year",Non-Important
+"Weekend movie streaming deals",Non-Important
+"Big savings on your favorite brands",Non-Important
+"Cyber Monday sale! Everything half price",Non-Important
+"Exciting offers on electronics",Non-Important
+"Join our loyalty rewards program",Non-Important
+"Flash sale starts now!",Non-Important
+"Celebrate Holi with great offers",Non-Important
+"Last chance to grab discounts",Non-Important
+"Book tickets for your next vacation",Non-Important
+"Online workshop on mindfulness",Non-Important
+"Early access to our clearance sale",Non-Important
+"Subscribe for weekly entertainment news",Non-Important
+"Upgrade your wardrobe for summer",Non-Important
+"Your cart is waiting! Complete your order",Non-Important
+"Participate in our monthly quiz",Non-Important
+"Exciting cashback offers on recharges",Non-Important
+"Recommended blogs for you today",Non-Important
+"Don’t miss our weekend sale",Non-Important
+"Limited time travel discounts",Non-Important
+"Special coupon for new customers",Non-Important
+"Invite to free online webinar",Non-Important
+"Your favorite products are back in stock",Non-Important
+"New beauty tips and health hacks",Non-Important
+"Stay updated with daily tech news",Non-Important
+"Top 5 deals you can’t miss",Non-Important
+"Your delivery is out for shipment",Important
+"Upcoming maintenance scheduled for website",Important
+"Your PAN card has been dispatched",Important
+"Insurance policy renewal reminder",Important
+"New login detected from Chrome browser",Important
+"Complaint ticket resolved successfully",Important
+"Account verification email",Important
+"Interview scheduled for tomorrow",Important
+"Meeting with HR at 4 PM",Important
+"Final project review with supervisor",Important
+"Power outage notification for tomorrow",Important
+"Important notice from your bank",Important
+"Expense reimbursement approved",Important
+"Training session link for employees",Important
+"Leave application approved",Important
+"Workshop attendance mandatory",Important
+"ID card renewal reminder",Important
+"Library due reminder for borrowed books",Important
+"Parking slot reassigned to employees",Important
+"Software license renewal alert",Important
+"Performance improvement plan meeting",Important
+"Feedback survey submission required",Important
+"Project kickoff meeting details",Important
+"Team leader meeting tomorrow morning",Important
+"Your mobile bill payment confirmation",Important
+"Bank account balance alert",Important
+"System maintenance update",Important
+"Deadline reminder: complete documentation",Important
+"Electricity bill due tomorrow",Important
+"Telecom service interruption notice",Important
+"Credit card bill payment reminder",Important
+"Employee onboarding checklist",Important
+"Training schedule shared by HR",Important
+"Delivery failed: address not found",Important
+"Customer support ticket opened",Important
+"Complaint registered successfully",Important
+"Reminder: system password expires soon",Important
+"University admission confirmation",Important
+"Doctor appointment confirmed",Important
+"Vaccination drive registration open",Important
+"New policy update from your bank",Important
+"Payroll update and salary slip",Important
+"Budget proposal submission deadline",Important
+"School reopening circular",Important
+"Admit card released for entrance exam",Important
+"Tax filing reminder for this month",Important
+"Software patch update available",Important
+"Please verify your registered email",Important
+"Exam registration ends tonight",Important
+"Maintenance completed successfully",Important
+"Quarterly audit meeting tomorrow",Important
+"Performance metrics report shared",Important
+"Laptop service appointment confirmed",Important
+"Water supply shutdown notice",Important
+"Transport schedule update",Important
+"IT team password policy update",Important
+"Bank OTP verification code",Important
+"Important security notification",Important
+"Password reset instructions",Important
+"Server downtime alert",Important
+"Change of office timings",Important
+"Office relocation update",Important
+"Company announcement meeting",Important
+"Upcoming interview schedule",Important
+"Email quota exceeded warning",Important
+"Certificate of participation attached",Important
+"Time-sensitive: verify your email",Important
+"Product recall announcement",Important
+"Reminder: update your KYC details",Important
+"Attendance regularization request",Important
+"Performance feedback required",Important
+"Expense submission deadline",Important
+"Client meeting tomorrow morning",Important
+"Urgent: software deployment issue",Important
+"System access revoked",Important
+"Firewall upgrade schedule",Important
+"Reminder: project delivery timeline",Important
+"New tax policy circular",Important
+"Team lunch postponed",Non-Important
+"Employee wellness newsletter",Non-Important
+"Weekend food fest at cafeteria",Non-Important
+"Sports day event this Sunday",Non-Important
+"Free meditation class registration",Non-Important
+"Annual picnic registration open",Non-Important
+"Celebrate our anniversary with offers",Non-Important
+"Movie tickets giveaway!",Non-Important
+"Weekly motivation quotes",Non-Important
+"Campus fest registrations open",Non-Important
+"Volunteer for community cleanup",Non-Important
+"Online photography contest",Non-Important
+"Employee birthday celebration",Non-Important
+"Yoga camp registration open",Non-Important
+"Cooking competition invite",Non-Important
+"Holiday celebration schedule",Non-Important
+"Company cricket league results",Non-Important
+"Fun Friday quiz winners announced",Non-Important
+"Blood donation camp at office",Non-Important
+"Recreational club membership",Non-Important
+"Free webinar on career growth",Non-Important
+"Campus hackathon registration",Non-Important
+"Christmas party photos shared",Non-Important
+"Monthly magazine now available",Non-Important
+"Weekend cultural event invite",Non-Important
+"Your loan application has been approved",Important
+"Mandatory training on new compliance policies",Important
+"Account locked due to multiple failed login attempts",Important
+"Request for time-off approval",Important
+"Client contract review needed by end of day",Important
+"Change in shipping address confirmed",Important
+"Two-factor authentication setup required",Important
+"Quarterly business review presentation deadline",Important
+"Tax document shared for immediate action",Important
+"Emergency maintenance on primary server tonight",Important
+"New employee documentation required",Important
+"Confirmation of your utility bill payment",Important
+"New version of team software released",Important
+"Please review and sign the attached NDA",Important
+"Critical security update for your device",Important
+"Your property tax payment is pending",Important
+"Important legal notice attached",Important
+"Vendor contract expiration alert",Important
+"Inventory count scheduled for this weekend",Important
+"Please update your employee emergency contact info",Important
+"10 ways to boost your productivity",Non-Important
+"Check out our latest video game reviews",Non-Important
+"Your personalized fitness plan inside",Non-Important
+"Get a free e-book on digital marketing",Non-Important
+"New recipes for healthy summer grilling",Non-Important
+"Sneak peek: our upcoming product line",Non-Important
+"Best vacation photo spots shared by users",Non-Important
+"Special offer on movie night snacks",Non-Important
+"Win a dinner voucher for two",Non-Important
+"Follow us on social media for daily tips",Non-Important
+"Top stories in fashion this week",Non-Important
+"Unsubscribe from our mailing list",Non-Important
+"See what's trending in home decor",Non-Important
+"Your daily dose of funny memes",Non-Important
+"Tips to save money on groceries",Non-Important
+"Learn a new language with a free lesson",Non-Important
+"Weekend forecast for your city",Non-Important
+"New blog post: how to excel in your career",Non-Important
+"Explore discounted flights to Europe",Non-Important
+"Limited time: enter our grand raffle",Non-Important

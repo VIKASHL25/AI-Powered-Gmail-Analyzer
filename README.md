@@ -1,62 +1,77 @@
-# Gmail Authentication & Mail Fetcher (Django + Google OAuth2)
+# Smart MailSense — AI-Powered Gmail Analyzer
 
-A modern Django web application designed for secure user authentication via Google OAuth 2.0 and subsequent retrieval of the user's latest Gmail messages using the Gmail API. This project delivers a clean, professional user interface for both the login process and the inbox display.
+Smart MailSense is an intelligent Gmail analyzer built with Django, Google OAuth2, and AI/ML components to classify and summarize recent emails. It connects securely to Gmail, fetches recent messages, classifies them as Important or Non-Important, and generates concise AI summaries.
 
-##  Features
+## Key Features
 
--  Secure Google Authentication: Implements the OAuth 2.0 flow for secure, token-based login.
--  Gmail Data Fetching: Fetches key email details (subject, sender, snippet) using the Gmail API.
--  Local Token Caching: Automatically saves the authentication token to a local `token.json` file for future sessions.
--  Beautiful Responsive UI: A user-friendly interface built with HTML5 and CSS3.
--  MVC Architecture: Structured according to the Django Model-View-Controller pattern.
--  Local Execution: Designed to run smoothly on `localhost:8000`.
+- Secure Google OAuth2 authentication
+- Fetches up to 15 latest Gmail messages
+- Local AI/ML classification (Important vs Non-Important)
+- AI-generated summaries using transformer models
+- Modern responsive UI built with HTML and CSS
+- Local model storage for reusability
+- End-to-end Django integration with SQLite default database
 
-##  Tech Stack
+## Tech Stack
 
-- Backend: Django 5.x
-- Frontend: HTML5, CSS3 (simple responsive templates)
-- APIs: Gmail API (Google OAuth 2.0)
-- Language: Python 3.13
-- Authentication libs: `google-auth`, `google-auth-oauthlib`, `google-auth-httplib2`, `google-api-python-client`
+- Frontend: HTML5, CSS3
+- Backend: Django (Python)
+- AI/ML: scikit-learn, Transformers (Hugging Face)
+- APIs: Gmail API, Google OAuth 2.0
+- Database: SQLite (default Django DB)
 
-##  Project Structure
+## Project Structure
 
 ```
-googleauth/
-		manage.py
-		credentials.json  # Google OAuth client credentials (DOWNLOADED)
-		token.json        # Auto-created after first successful login (CACHED)
-
-		googleauth/       # Main Django Project Configuration
-		├── settings.py
-		├── urls.py
-		└── ...
-
-		gmail_auth/       # Django App with Core Logic
-				views.py      # Core Auth and Gmail API logic
-				urls.py
-				templates/
-						login.html  # Login UI
-						email.html  # Inbox UI
+SmartMailSense/
+├── googleauth/                  # Main Django project folder
+├── gmail_auth/                  # Django app
+│   ├── templates/
+│   │   ├── login.html
+│   │   └── email.html
+│   ├── views.py
+│   ├── urls.py
+│   ├── train_model.py
+│   └── email_classifier.pkl
+├── cred.json                    # Google OAuth credentials (rename after download)
+├── token.json                   # Generated after login
+├── requirements.txt
+├── manage.py
+└── README.md
 ```
 
-##  Setup Instructions
+## Requirements
 
-1. Clone & navigate
+Suggested `requirements.txt` entries:
+
+```
+Django==5.2.7
+google-auth==2.36.0
+google-auth-oauthlib==1.2.1
+google-api-python-client==2.158.0
+transformers==4.44.2
+torch==2.4.1
+scikit-learn==1.5.2
+numpy==1.26.4
+pandas==2.2.3
+requests==2.32.3
+```
+
+## Setup Instructions
+
+1. Clone the repository
 
 ```powershell
-git clone https://github.com/VIKASHL25/Google-Authentication-and-Fetching-Mails.git
-cd gmail-auth-django
+git clone https://github.com/yourusername/smart-mailsense.git
+cd smart-mailsense
 ```
 
-2. Create a virtual environment
+2. Create and activate a virtual environment
 
 ```powershell
 python -m venv venv
+venv\Scripts\Activate.ps1
 
-venv\Scripts\Activate
-
-```
 
 3. Install dependencies
 
@@ -64,64 +79,58 @@ venv\Scripts\Activate
 pip install -r requirements.txt
 ```
 
-4. Google Cloud Setup (Critical)
+4. Create `cred.json` (Google OAuth credentials)
 
-This project requires configuring a project and enabling the Gmail API on the Google Cloud Console.
+Steps:
 
-- Create a Project in the Google Cloud Console.
-- Enable Gmail API: APIs & Services → Library → search for Gmail API → Enable.
-- Configure OAuth Consent Screen:
-	- User Type: External (for testing)
-	- Add app name, support email, and test users (your Gmail account) and save.
-- Create OAuth Credentials:
-	- APIs & Services → Credentials → Create Credentials → OAuth Client ID
-	- Application type: Web application
-	- Authorized redirect URIs: `http://localhost:8000/google/callback/`
-	- Click Create → Download the JSON file.
-	- Rename the downloaded file to `credentials.json` and place it next to `manage.py`.
+- Go to the Google Cloud Console and create a new project.
+- Enable the Gmail API for your project.
+- Create OAuth 2.0 Client ID credentials (application type: Web application).
+- Add `http://localhost:8000/google/callback/` as an Authorized Redirect URI.
+- Download the JSON credentials file and rename it to `cred.json` and place it in the project root.
 
-5. Run the project
+5. Run database migrations and start the server
 
 ```powershell
 python manage.py migrate
 python manage.py runserver
 ```
 
-Open your browser at: http://127.0.0.1:8000/
+Open your browser at: http://127.0.0.1:8000 and log in with Google to start analyzing your inbox.
 
-Click "Login with Google" to begin the OAuth flow. After successfully authenticating, `token.json` will be created in the project root and you'll be able to view the latest messages pulled from the Gmail API.
+## AI Functionality
 
-## Requirements
+### Email Classification
 
-Create a `requirements.txt` in the project root with at least the following lines:
+A locally trained classifier (`email_classifier.pkl`) labels emails as:
 
+- Important
+- Non-Important
+
+The model can be retrained on your dataset (an example CSV dataset is expected by the training script).
+
+### Email Summarization
+
+Uses a transformer summarization model (for example `facebook/bart-large-cnn`) to generate concise summaries of longer messages.
+
+## Training the Classifier
+
+To retrain the importance classifier, run:
+
+```powershell
+python gmail_auth/train_model.py
 ```
-Django>=5.0
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
-google-api-python-client
-```
 
-## Usage Notes & Security
+This script reads training data (e.g., `email_dataset.csv`), trains a classification model (Logistic Regression or Naive Bayes), and saves the trained model to `email_classifier.pkl`.
 
-- Keep `credentials.json` private. Do not commit it to version control. Add it to `.gitignore`.
-- `token.json` contains OAuth tokens; treat it as sensitive and add to `.gitignore` as well in production scenarios.
-- For production use, consider server-side secure storage for tokens and implement proper session management.
 
 ## Screenshots
-
-
+#### 🔹 Login Page
+ 
 ![Login Page](./imgs/login.png)
-![Inbox Display](./imgs/mails.png)
 
-## Author
-
-Vikas HL
-
-- BE in Information Science & Engineering
-- Passionate about Python, AI, Machine Learning and Deep Learning 
-- Email: vikaslokesh360@gmail.com
+#### 🔹 Dashboard View
+![Dashboard](./imgs/mails.png)
 
 
 

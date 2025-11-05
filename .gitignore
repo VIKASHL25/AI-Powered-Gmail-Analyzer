@@ -31,3 +31,6 @@ Thumbs.db
 env/
 venv/
 .env.bak
+
+#model
+email_classifier.pkl
